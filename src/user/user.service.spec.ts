@@ -56,7 +56,7 @@ describe('UserService', () => {
             const param: number = 2;
             const expectedResult: any = {
                 firstName: 'Anna',
-                lastName: 'anna.anyan@examplegmail.com',
+                lastName: 'anna.anyan@gmail.com',
             };
             jest.spyOn(repository, 'findOneBy').mockImplementation(() => expectedResult);
             if (expectedResult) {

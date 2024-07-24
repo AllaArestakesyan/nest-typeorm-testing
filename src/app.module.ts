@@ -16,7 +16,7 @@ import { UserModule } from './user/user.module';
       database: 'test',
       entities: [User],
       synchronize: true,
-    }),],
+    })],
   controllers: [AppController],
   providers: [AppService],
 })

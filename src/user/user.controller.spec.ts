@@ -16,7 +16,7 @@ describe('UserController', () => {
         {
           provide: getRepositoryToken(User),
           useClass: Repository
-        },]
+        }]
 
     }).compile();
 
