@@ -14,16 +14,19 @@ describe('UserService', () => {
                 {
                     provide: getRepositoryToken(User),
                     useClass: Repository,
-                }]
+                }
+            ]
         }).compile();
 
         service = module.get<UserService>(UserService);
         repository = module.get<Repository<User>>(getRepositoryToken(User));
+
+
     });
     describe('findAll', () => {
         it('should return  User[ ]', async () => {
             const expectedResult: any = [];
-            jest.spyOn(repository, 'find').mockResolvedValueOnce(expectedResult);
+            jest.spyOn(repository, 'find').mockResolvedValue(expectedResult);
             const result = await service.findAll();
             expect(result).toEqual(expectedResult);
         });
@@ -85,5 +88,6 @@ describe('UserService', () => {
                 expect(service.remove(1)).toEqual(false);
             }
         });
-    })
+    });
+    
 });
